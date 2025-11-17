@@ -1,0 +1,7 @@
+*.env.ini
+**/session/
+.vscode/
+*perpetva_bot.session
+*env.ini
+*__pycache__/
+*venv/

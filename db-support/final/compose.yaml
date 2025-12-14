@@ -1,0 +1,20 @@
+services:
+  bot:
+    build: 
+      context: .
+      dockerfile: Containerfile
+    
+    volumes:
+      - .:/app:Z
+    env_file:
+      - env.ini
+    depends_on:
+      - db
+    restart: always
+  db:
+    image: docker.io/library/mariadb:10.5
+    env_file:
+    - env.ini
+    volumes:
+    - ./db:/docker-entrypoint-initdb.d:Z
+
